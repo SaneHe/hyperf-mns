@@ -1,0 +1,43 @@
+{
+  "name": "aliyunmns/hyperf",
+  "type": "library",
+  "license": "MIT",
+  "keywords": [
+    "php",
+    "hyperf",
+    "aliyun mns"
+  ],
+  "description": "A hyperf aliyun mns handler.",
+  "autoload": {
+    "psr-4": {
+      "Sane\\": "src/"
+    }
+  },
+  "require": {
+    "php": ">=7.3",
+    "hyperf/di": "2.2.*",
+    "hyperf/framework": "2.2.*",
+    "aliyun/aliyun-mns-php-sdk": ">=1.0.0",
+    "ext-json": "require to use"
+  },
+  "require-dev": {
+    "friendsofphp/php-cs-fixer": "^3.0",
+    "phpunit/phpunit": ">=7.0"
+  },
+  "minimum-stability": "dev",
+  "prefer-stable": true,
+  "config": {
+    "optimize-autoloader": true,
+    "sort-packages": true
+  },
+  "scripts": {
+    "test": "phpunit -c phpunit.xml --colors=always",
+    "analyse": "phpstan analyse --memory-limit 1024M -l 0 ./src",
+    "cs-fix": "php-cs-fixer fix $1"
+  },
+  "extra": {
+    "hyperf": {
+      "config": "Sane\\ConfigProvider"
+    }
+  }
+}
